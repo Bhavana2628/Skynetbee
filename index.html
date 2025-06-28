@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkyneTBee</title>
+  <style>
+ @import url('https://fonts.cdnfonts.com/css/devil-breeze');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+@import url('https://fonts.cdnfonts.com/css/bimbo');
+@import url('https://fonts.cdnfonts.com/css/jenkine');
+@import url('https://fonts.cdnfonts.com/css/beyonders');
+@import url('https://fonts.cdnfonts.com/css/resotelavender');
+@import url('https://fonts.cdnfonts.com/css/ballet');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  /* background-color: #cc8f00; */
+  background-color: #dfa00d;
+  color: #ffed29;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+}
+*::-webkit-scrollbar {
+  width: 0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+/* Topbar Styles */
+nav {
+  width: 100%;
+  background-color: transparen; /* Semi-transparent background */
+  backdrop-filter: blur(20px); /* Apply blur effect */
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+nav li:first-child {
+  margin-right: auto;
+}
+
+nav a {
+  padding: 0 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: #ffed29;
+  height: 100%;
+}
+
+nav a:hover {
+  background-color: white; /* Slight transparency on hover */
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.6); /* black transparent background */
+  backdrop-filter: blur(15px); /* blur effect */
+  box-shadow: -10px 0 20px rgba(0, 0, 0, 0.3); /* stronger shadow for depth */
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  z-index: 999;
+}
+
+.sidebar.open {
+  display: flex; /* Sidebar is shown when class 'open' is added */
+  flex-direction: column;
+  align-items: flex-start;
+}
+.sidebar li {
+  width: 100%;
+}
+
+.sidebar a {
+  width: 100%;
+  padding: 10px;
+  color: #ffed29; /* yellow text */
+  font-weight: bold;
+}
+
+
+.sidebar a:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* light hover */
+}
+
+.menu-button {
+  display: none;
+}
+
+.section {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content-fit {
+  width: min(1200px, 90vw);
+  margin: auto;
+  min-height: 100vh;
+  position: relative;
+  padding-block: 10em;
+}
+
+header {
+  padding-block: 0.6em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10px;
+  z-index: 100;
+  background-color: #1B1B1B11;
+}
+
+header .content-fit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: unset!important;
+  padding-block: unset!important;
+}
+header .content-fit nav ul{
+  gap: 1em;
+  font-size: 1.5em;
+}
+/* banner skynet start */
+#banner {
+  margin-bottom: -1.5em;
+}
+#banner .title {
+  color: #d1ff48;
+  font-size: 11em;
+  font-family: "devil breeze";
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+
+}
+#banner .title::before {
+  content: attr(data-before);
+  position: absolute;
+  top: 0.5em;
+  inset: 0.66em 0 0 0;
+  z-index: -1;
+}
+.section .decorate {
+  position: absolute;
+}
+/* banner skynet end */
+
+/* intro start  */
+#intro{
+  margin-top: 4em;
+} 
+#intro .content-fit {
+  display: flex;
+  gap: 20%;
+  justify-content: space-between;
+  align-items: center;
+}
+#intro.section .number {
+  font-family: "devil breeze";
+  font-size: 12em;
+  font-weight: bold;
+}
+.section .content-fit .title {
+  font-family: "devil breeze";
+  font-size: 20em;
+  font-weight: bold;
+}
+.des .title{
+  margin-bottom: 40px;
+  font-size: 15em;
+}
+.des p{
+  font-size: 28px;
+  text-align: center;
+  font-weight: 500;
+}
+/* intro end */
+/* description start */
+#description {
+  margin-bottom: -10em;
+}
+#description .content-fit {
+  display: flex;
+  gap: 20%;
+  justify-content: space-between;
+  align-items: center;
+}
+#description.section .number {
+  font-family: "devil breeze";
+  font-size: 12em;
+  font-weight: bold;
+  order: 2;
+}
+.section .content-fit .title {
+  font-family: "devil breeze";
+  font-size: 5em;
+  font-weight: bold;
+}
+.des p{
+  font-size: 28px;
+  text-align: center;
+  font-weight: 500;
+}
+/* description end */
+
+/* contanct start */
+#contact.section .number {
+  font-family: "devil breeze";
+  font-size: 12em;
+  font-weight: bold;
+  
+}
+
+#contact .content-fit {
+  display: flex;
+  gap: 10%;
+  justify-content: space-between;
+  
+}
+#contact.title {
+  font-size: 32px;
+}
+.section.number {
+  font-family: "devil breeze";
+  font-size: 12em;
+  font-weight: bold;
+  order: 2;
+}
+#contact table {
+  max-width: 900px;
+  padding-top: 2em;
+  font-size:2.5em;
+  margin: auto;
+  align-items: center;
+}
+#contact table td {
+  padding-block: 0.5em;
+  border-bottom: 1px dashed #445022;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#contact table td:nth-child(1) {
+  text-align: left;
+  font-weight: 500;
+}
+#contact table td:nth-child(2) {
+  text-align: right;
+  font-weight: 200;
+}
+#contact {
+  margin-bottom: -12em;
+}
+.section {
+  text-align: center; /* Center align the content inside the section */
+}
+
+.sign {
+  font-size: 12em; /* Large font size */
+  font-family: 'Bimbo', sans-serif;
+  font-weight: 500; /* Optional: make the text bold */
+  text-align: center; /* Optional: center-align the text */
+}
+/* contact end */
+
+/* 3d container start */
+#container3D {
+  position: fixed;
+  inset: 0;
+  /* background-color: red; */
+  z-index: 100;
+  pointer-events: none;
+}
+/* 3d container end  */
+@media screen and (max-width: 768px) {
+  .sidebar a {
+    color: #ffed29 !important;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  * {
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 1080px) {
+  nav ul {
+    flex-direction: row; /* Keep items in a row */
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center; /* Center items vertically */
+    padding: 0; /* Reset padding */
+    margin: 0; /* Reset margin */
+    list-style-type: none; /* No bullets */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+
+  nav li:first-child {
+    margin-right: auto; /* Push the first item to the left */
+  }
+
+  nav a {
+    padding: 0 10px; /* Adjust padding for better spacing */
+    text-decoration: none; /* Remove underline */
+    display: flex; /* Make it a flex container */
+    align-items: center; /* Center vertically */
+    color: #ffed29; /* Text color */
+    height: 100%; /* Full height */
+    font-size: 1.2em; /* Adjust font size */
+  }
+
+  nav a:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  /* Banner adjustments */
+  #banner {
+    margin-bottom: -8em; /* Adjust margin */
+  }
+  #banner .title {
+    font-size: 9em; /* Adjust font size for larger screens */
+    text-align: center;
+  }
+  #banner .title::before {
+    top: 0.5em;
+    inset: 0.5em 0 0 0; /* Adjust positioning */
+  }
+
+  /* Intro section adjustments */
+  #intro {
+    margin-bottom: -6em; /* Adjust margin */
+  }
+  #intro .content-fit {
+    gap: 10%; /* Reduce gap between elements */
+    justify-content: space-between;
+    align-items: center;
+  }
+  #intro.section .number {
+    font-size: 10em; /* Adjust font size */
+  }
+  .section .content-fit .title {
+    font-size: 15em; /* Adjust font size */
+  }
+  .des .title {
+    font-size: 12em; /* Adjust title size */
+    margin-bottom: 30px;
+  }
+  .des p {
+    font-size: 2em; /* Adjust font size */
+    line-height: 2em; /* Adjust line height */
+  }
+
+  /* Description section adjustments */
+  #description {
+    margin-bottom: -8em; /* Adjust margin */
+  }
+  #description .content-fit {
+    gap: 15%; /* Reduce gap between elements */
+    justify-content: space-between;
+    align-items: center;
+  }
+  #description.section .number {
+    font-size: 10em; /* Adjust font size */
+  }
+  .section .content-fit .title {
+    font-size: 4.5em; /* Adjust title size */
+  }
+
+  /* Contact section adjustments */
+  #contact.section .number {
+    font-size: 10em; /* Adjust font size */
+  }
+  #contact .content-fit {
+    gap: 8%; /* Reduce gap between elements */
+    justify-content: space-between;
+  }
+  #contact table {
+    max-width: 850px; /* Adjust table width */
+    font-size: 2.2em; /* Adjust font size */
+  }
+  #contact table td {
+    padding-block: 0.4em; /* Adjust padding */
+  }
+  #contact {
+    margin-bottom: -10em; /* Adjust margin */
+  }
+  .section.number {
+    font-size: 10em; /* Adjust font size */
+  }
+  .sign {
+    font-size: 10em; /* Adjust sign size */
+  }
+
+  /* 3D container adjustments */
+  #container3D {
+    inset: 0; /* Keep full-screen position */
+  }
+}
+
+@media (max-width: 860px) {
+  
+    /* Hide specific elements on mobile */
+    .hideOnMobile {
+        display: none; /* Hide elements with this class on mobile */
+    }
+
+    /* Show the menu button (e.g., hamburger menu) on mobile */
+    .menu-button {
+        display: block; /* Show hamburger menu button on mobile */
+        margin-left: auto;
+    }
+
+    /* Adjust navigation menu layout for mobile */
+    /* Hide sidebar on smaller screens */
+    #content-fit .sidebar {
+        display: none;
+    }
+
+    /* Prevent horizontal scrolling */
+    body, html {
+        overflow-x: hidden;
+    }
+
+    /* Ensure that elements fit within the screen */
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Banner title adjustments */
+    #banner .title {
+        margin-bottom: 0; /* Remove extra top margin */
+        font-size: 10em; /* Adjust font size for larger screens */
+        line-height: 1.2; /* Optional: Adjust line height for better spacing */
+    }
+
+    #banner .title::before {
+        content: attr(data-before);
+        position: absolute;
+        top: 0.5em;
+        inset: 0.66em 0 0 0; /* Adjust spacing */
+        z-index: -1;
+        color: #445022;
+    }
+
+    /* Decorate section */
+    .section .decorate {
+        position: absolute;
+    }
+
+    /* Intro section layout adjustments */
+    #intro .content-fit {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        gap: 8%; /* Adjust gap between items */
+        justify-content: center; /* Center items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    /* Number and title styling in sections */
+    #intro.section .number {
+        font-family: "devil breeze";
+        font-size: 10em; /* Adjust font size */
+        font-weight: bold;
+        margin-top: -2em;
+    }
+
+    .section .content-fit .title {
+        font-family: "devil breeze";
+        font-size: 4em; /* Adjust font size */
+        font-weight: bold;
+    }
+
+    #description {
+        margin-bottom: -6em; /* Adjust margin */
+    }
+
+    #description .content-fit {
+        display: grid;
+        grid-template-areas:
+            "number"
+            "number"; /* Ensures number stays first, title second, and content last */
+        gap: 8%; /* Adjust gap */
+        align-items: center;
+    }
+
+    #description .number {
+        font-family: "devil breeze";
+        font-size: 9em; /* Adjust font size */
+        font-weight: bold;
+        grid-area: number; /* Number will be in the first position */
+    }
+
+    #description .title {
+        font-family: "devil breeze";
+        font-size: 4em; /* Adjust font size */
+        font-weight: bold;
+        grid-area: title; /* Title will come next to the number */
+    }
+
+    .des p {
+        font-size: 2em; /* Adjust font size */
+        text-align: center;
+        font-weight: 500;
+        line-height: 2em;
+        grid-area: des; /* Content will appear below the title */
+    }
+
+    #contact.section .number {
+        font-size: 10em; /* Adjust font size for better fit on smaller screens */
+    }
+
+    #contact .content-fit {
+        flex-direction: column; /* Stack elements vertically */
+        gap: 2em; /* Adjust gap between stacked elements */
+    }
+
+    #contact .title {
+        font-size: 7em; /* Adjust title font size */
+    }
+
+    .section .number {
+        font-size: 7em; /* Adjust font size */
+        order: 0; /* Optional: Keep the order for small screens if needed */
+    }
+
+    #contact table {
+        max-width: 100%; /* Make table responsive to screen size */
+        font-size: 1.9em; /* Adjust font size to fit smaller screens */
+    }
+
+    #contact table td {
+        font-size: 1.2em; /* Adjust text size inside table */
+        padding-block: 0.5em; /* Adjust padding for smaller screens */
+    }
+
+    #contact {
+        margin-bottom: -12em; /* Adjust margin */
+    }
+
+    .section {
+        text-align: center; /* Keep content centered */
+    }
+
+    .sign {
+        font-size: 8em; /* Adjust the size of the sign text */
+        text-align: center;
+        font-weight: 500;
+    }
+
+    #container3D {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        pointer-events: none;
+        inset: 10px;
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+@media (max-width: 550px) {
+  /* Hide specific elements on mobile */
+  .hideOnMobile {
+      display: none; /* Hide elements with this class on mobile */
+  }
+
+  /* Show the menu button (e.g., hamburger menu) on mobile */
+  .menu-button {
+      display: block; /* Show hamburger menu button on mobile */
+      margin-left: auto;
+  }
+
+  /* Hide sidebar on smaller screens */
+  #content-fit .sidebar {
+      display: none;
+  }
+
+  /* Prevent horizontal scrolling */
+  body, html {
+      overflow-x: hidden;
+  }
+
+  /* Ensure that elements fit within the screen */
+  * {
+      box-sizing: border-box;
+  }
+
+  /* Adjustments for the banner title */
+  #banner .title {
+      margin-top: -1em; /* Remove extra top margin */
+      font-size: 4.5em; /* Adjust font size for smaller screens */
+      line-height: 1.1; /* Adjust line height for better spacing */
+  }
+
+  #banner .title::before {
+      content: attr(data-before);
+      position: absolute;
+      top: 0.5em;
+      inset: 0.5em 0 0 0; /* Adjust spacing */
+      z-index: -1;
+      color: #445022;
+  }
+
+  /* Position decorations properly */
+  .section .decorate {
+      position: absolute;
+  }
+
+  /* Adjustments for the intro section */
+  #intro .content-fit {
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+      gap: 3%; /* Adjust gap between items */
+      justify-content: center;
+      align-items: center;
+  }
+
+  #intro.section .number {
+      font-family: "devil breeze";
+      font-size: 7em; /* Adjust font size */
+      font-weight: bold;
+      margin-top: -3em;
+  }
+
+  .section .content-fit .title {
+      font-family: "devil breeze";
+      font-size: 2em; /* Adjust font size */
+      font-weight: bold;
+  }
+
+  #description {
+      margin-bottom: -4em; /* Adjust bottom margin */
+  }
+
+  #description .content-fit {
+      display: grid;
+      grid-template-areas:
+          "number"
+          "number"; /* Ensures number stays first, title second */
+      gap: 4%; /* Adjust gap */
+      align-items: center;
+  }
+
+  #description .number {
+      font-family: "devil breeze";
+      font-size: 1em; /* Adjust font size */
+      font-weight: bold;
+      grid-area: number;
+  }
+
+  #description .title {
+      font-family: "devil breeze";
+      font-size: 2.4em; /* Adjust font size */
+      font-weight: bold;
+      grid-area: title;
+  }
+
+  .des p {
+      font-size: 22px; /* Adjust font size */
+      text-align: center;
+      font-weight: 500;
+      line-height: 2em; /* Adjust line height */
+      grid-area: des;
+
+  }
+
+  #contact.section .number {
+      font-size: 7em; /* Adjust font size for smaller screens */
+  }
+
+  #contact .content-fit {
+      flex-direction: column; /* Stack elements vertically */
+      gap: 1.2em; /* Adjust gap */
+  }
+
+  #contact .title {
+      font-size: 3.5em; /* Adjust title font size */
+  }
+
+  .section .number {
+      font-size: 4.5em; /* Adjust font size */
+      order: 0;
+  }
+
+  #contact table {
+      max-width: 100%; /* Make table responsive */
+      font-size: 2em; /* Adjust font size for table */
+  }
+
+  #contact table td {
+      font-size: 0.85em; /* Adjust text size in table */
+      padding-block: 0.2em; /* Adjust padding */
+  }
+
+  #contact {
+      margin-bottom: -8em; /* Adjust margin */
+  }
+
+  .section {
+      text-align: center; /* Keep content centered */
+  }
+
+  .sign {
+      font-size: 5em; /* Adjust sign text size */
+      text-align: center;
+      font-weight: 500;
+      margin-top: -1em;
+  }
+
+  #container3D {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      pointer-events: none;
+      inset: 10px;
+      width: 100vw;
+      height: 100vh;
+  }
+}
+@media (max-width: 440px) {
+  /* Hide specific elements on mobile */
+  .hideOnMobile {
+      display: none; /* Hide elements with this class on mobile */
+  }
+
+  /* Show the menu button (e.g., hamburger menu) on mobile */
+  .menu-button {
+      display: block; /* Show hamburger menu button on mobile */
+      margin-left: auto;
+  }
+
+  /* Adjust navigation menu layout for mobile */
+  /* Hide sidebar on smaller screens */
+  #content-fit .sidebar {
+      display: none;
+  }
+
+  /* Prevent horizontal scrolling */
+  body, html {
+      overflow-x: hidden;
+  }
+
+  /* Ensure that elements fit within the screen */
+  * {
+      box-sizing: border-box;
+  }
+
+  /* Banner title adjustments */
+  #banner .title {
+      margin-top: -1; /* Remove extra top margin */
+      font-size: 4.5em; /* Adjust font size for smaller screens */
+      line-height: 1.2; /* Optional: Adjust line height for better spacing */
+  }
+
+  #banner .title::before {
+      content: attr(data-before);
+      position: absolute;
+      top: 0.5em;
+      inset: 0.5em 0 0 0; /* Adjust spacing */
+      z-index: -1;
+      color: #445022;
+  }
+
+  /* Decorate section */
+  .section .decorate {
+      position: absolute;
+  }
+
+  /* Intro section layout adjustments */
+  #intro .content-fit {
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+      gap: 4%; /* Adjust gap between items */
+      justify-content: center; /* Center items vertically */
+      align-items: center; /* Center items horizontally */
+  }
+
+  /* Number and title styling in sections */
+  #intro.section .number {
+      font-family: "devil breeze";
+      font-size: 8em; /* Adjust font size */
+      font-weight: bold;
+  }
+
+  .section .content-fit .title {
+      font-family: "devil breeze";
+      font-size: 2.8em; /* Adjust font size */
+      font-weight: bold;
+  }
+
+  #description {
+      margin-bottom: -4em; /* Adjust margin */
+  }
+
+  #description .content-fit {
+      display: grid;
+      grid-template-areas:
+          "number"
+          "number"; /* Ensures number stays first, title second, and content last */
+      gap: 8%; /* Adjust gap */
+      align-items: center;
+  }
+
+  #description .number {
+      font-family: "devil breeze";
+      font-size: 3.5em; /* Adjust font size */
+      font-weight: bold;
+      grid-area: number; /* Number will be in the first position */
+  }
+
+  #description .title {
+      font-family: "devil breeze";
+      font-size: 2.8em; /* Adjust font size */
+      font-weight: bold;
+      grid-area: title; /* Title will come next to the number */
+  }
+
+  .des p {
+      font-size: 1.5em; /* Adjust font size */
+      text-align: center;
+      font-weight: 500;
+      line-height: 2em;
+      grid-area: des; /* Content will appear below the title */
+  }
+
+  #contact.section .number {
+      font-size: 9em; /* Adjust font size for better fit on smaller screens */
+  }
+
+  #contact .content-fit {
+      flex-direction: column; /* Stack elements vertically */
+      gap: 2em; /* Adjust gap between stacked elements */
+  }
+
+  #contact .title {
+      font-size: 3.5em; /* Adjust title font size */
+  }
+
+  .section .number {
+      font-size: 5.5em; /* Adjust font size */
+      order: 0; /* Optional: Keep the order for small screens if needed */
+  }
+
+  #contact table {
+      max-width: 100%; /* Make table responsive to screen size */
+      font-size: 1.7em; /* Adjust font size to fit smaller screens */
+  }
+
+  #contact table td {
+      font-size: 0.9em; /* Adjust text size inside table */
+      padding-block: 0.5em; /* Adjust padding for smaller screens */
+  }
+
+  #contact {
+      margin-bottom: -10em; /* Adjust margin */
+  }
+
+  .section {
+      text-align: center; /* Keep content centered */
+  }
+
+  .sign {
+      font-size: 5em; /* Adjust the size of the sign text */
+      text-align: center;
+      font-weight: 500;
+  }
+
+  #container3D {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      pointer-events: none;
+      inset: 10px;
+      width: 100vw;
+      height: 100vh;
+  }
+}
+
+@media (max-width: 380px) {
+  /* Hide specific elements on mobile */
+  .hideOnMobile {
+      display: none; /* Hide elements with this class on mobile */
+  }
+
+  /* Show the menu button (e.g., hamburger menu) on mobile */
+  .menu-button {
+      display: block; /* Show hamburger menu button on mobile */
+      margin-left: auto;
+  }
+
+  /* Adjust navigation menu layout for mobile */
+  /* Hide sidebar on smaller screens */
+  #content-fit .sidebar {
+      display: none;
+  }
+
+  /* Prevent horizontal scrolling */
+  body, html {
+      overflow-x: hidden;
+  }
+
+  /* Ensure that elements fit within the screen */
+  * {
+      box-sizing: border-box;
+  }
+
+  /* Banner title adjustments */
+  #banner .title {
+      margin-top: -1;
+      margin-bottom: 5.5em; /* Remove extra top margin */
+      font-size: 4.5em; /* Adjust font size for smaller screens */
+      line-height: 1.2; /* Optional: Adjust line height for better spacing */
+  }
+
+  #banner .title::before {
+      content: attr(data-before);
+      position: absolute;
+      top: 0.5em;
+      inset: 0.5em 0 0 0; /* Adjust spacing */
+      z-index: -1;
+      color: #445022;
+  }
+
+  /* Decorate section */
+  .section .decorate {
+      position: absolute;
+  }
+
+  /* Intro section layout adjustments */
+  #intro .content-fit {
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+      gap: 4%; /* Adjust gap between items */
+      justify-content: center; /* Center items vertically */
+      align-items: center; /* Center items horizontally */
+  }
+
+  /* Number and title styling in sections */
+  #intro.section .number {
+      font-family: "devil breeze";
+      font-size: 8em; /* Adjust font size */
+      font-weight: bold;
+  }
+
+  .section .content-fit .title {
+      font-family: "devil breeze";
+      font-size: 2.8em; /* Adjust font size */
+      font-weight: bold;
+  }
+
+  #description {
+      margin-bottom: -4em; /* Adjust margin */
+  }
+
+  #description .content-fit {
+      display: grid;
+      grid-template-areas:
+          "number"
+          "number"; /* Ensures number stays first, title second, and content last */
+      gap: 8%; /* Adjust gap */
+      align-items: center;
+  }
+
+  #description .number {
+      font-family: "devil breeze";
+      font-size: 3.5em; /* Adjust font size */
+      font-weight: bold;
+      grid-area: number; /* Number will be in the first position */
+  }
+
+  #description .title {
+      font-family: "devil breeze";
+      font-size: 2.8em; /* Adjust font size */
+      font-weight: bold;
+      grid-area: title; /* Title will come next to the number */
+  }
+
+  .des p {
+      font-size: 20px; /* Adjust font size */
+      text-align: center;
+      font-weight: 500;
+      line-height: 2em;
+      grid-area: des; /* Content will appear below the title */
+  }
+
+  #contact.section .number {
+      font-size: 9em; /* Adjust font size for better fit on smaller screens */
+  }
+
+  #contact .content-fit {
+      flex-direction: column; /* Stack elements vertically */
+      gap: 2em; /* Adjust gap between stacked elements */
+  }
+
+  #contact .title {
+      font-size: 3.5em; /* Adjust title font size */
+  }
+
+  .section .number {
+      font-size: 5.5em; /* Adjust font size */
+      order: 0; /* Optional: Keep the order for small screens if needed */
+  }
+
+  #contact table {
+      max-width: 100%; /* Make table responsive to screen size */
+      font-size: 1.4em; /* Adjust font size to fit smaller screens */
+  }
+
+  #contact table td {
+      font-size: 0.9em; /* Adjust text size inside table */
+      padding-block: 0.5em; /* Adjust padding for smaller screens */
+  }
+
+  #contact {
+      margin-bottom: -10em; /* Adjust margin */
+  }
+
+  .section {
+      text-align: center; /* Keep content centered */
+  }
+
+  .sign {
+      font-size: 4em; /* Adjust the size of the sign text */
+      text-align: center;
+      font-weight: 500;
+  }
+
+  #container3D {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      pointer-events: none;
+      inset: 10px;
+      width: 100vw;
+      height: 100vh;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="sidebar" id="navbar">
+      <li onclick="hideSidebar()"><a href="#"><strong>X</strong></a></li>
+      <li><a href="/Apple-Glob.html">Apple</a></li>
+      <li><a href="/Android-Glob.html">Android</a></li>
+      <li><a href="/Web-Glob.html">Web</a></li>
+      <li><a href="/DotneT-Glob.html">DotNet</a></li>
+      <li><a href="/Robotics-Glob.html">Robotics</a></li>
+      <li><a href="/skynetbee/">DevZone</a></li>
+      <li><a href="/Robotics-Glob.html">Hiring</a></li>
+    </ul>
+    <ul class="topbar">
+      <li>
+        <a href="/index.html">
+          SkyneT
+          <img src="https://www.skynetbee.com/skynetbee/skynet-framework/icons/skynetbeepng.png" alt="Logo" height="45" style="vertical-align: middle; margin-left: 5px;">
+        </a>
+      </li>
+      <li class="hideOnMobile"><a href="/Apple-Glob.html">Apple</a></li>
+      <li class="hideOnMobile"><a href="/Android-Glob.html">Android</a></li>
+      <li class="hideOnMobile"><a href="/Web-Glob.html">Web</a></li>
+      <li class="hideOnMobile"><a href="/DotneT-Glob.html">DotNet</a></li>
+      <li class="hideOnMobile"><a href="/Robotics-Glob.html">Robotics</a></li>
+      <li class="hideOnMobile"><a href="/skynetbee/">DevZone</a></li>
+      <li class="hideOnMobile"><a href="/Robotics-Glob.html">Hiring</a></li>
+      <li class="menu-button" onclick="showSidebar()"><a href="#">☰</a></li>
+    </ul>
+  </nav>
+  <div class="section" id="banner">
+    <div class="content-fit">
+        <div class="title">SKYNET</div>
+    </div>
+</div>
+<div class="section" id="intro">
+    <div class="content-fit">
+        <div class="number">01</div>
+        <div class="des">
+            <div class="title">SKYNETBEE</div>
+            <p>At Skynet, we craft apps or websites tailored to your needs. 💻 Simply share your vision, and we’ll bring it to life. Our charges are minimal, with support exceeding industry standards. 🔧 We emphasize data security and cutting-edge tech like AI.</p>
+        </div>
+    </div>
+</div>
+<div class="section" id="description">
+    <div class="content-fit">
+        <div class="number">02</div>
+        <div class="des">
+            <div class="title">ABOUT US</div>
+            <p>Our SkyneTBee Pvt Ltd, has over 10 wings, each handling key areas of app development, such as cybersecurity🔐, quality analysis, etc. On the top-right menu, we've listed developer wings like Apple App Development with Xcode and Swift, Android App Development using Java or Kotlin in Android Studio📱, etc. For privacy, we haven't disclosed details about confidential teams like cybersecurity.</p>
+        </div>
+    </div>
+</div>
+<div class="section" id="contact">
+    <div class="content-fit">
+        <div class="number">03</div>
+        <div class="des">
+            <div class="title">CONTACT</div>
+                <table>
+                    <tr>
+                    <td>Email</td>
+                    <td>ceo@skynetbee.com</td>
+                     </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td>+91 7373733020</td>
+                    </tr>
+                    <tr>
+                        <td>Twitter</td>
+                        <td>@SkyneTBee</td>
+                    </tr>
+                    <tr>
+                        <td>Youtube</td>
+                        <td>@skynetbee</td>
+                    </tr>
+                    <tr>
+                        <td>Instagram</td>
+                        <td>@skynetbee</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section" id="brand">
+    <div class="content-fit">
+        <div class="des">
+            <div class="sign">Skynet</div>
+        </div>
+    </div>
+</div>
+
+  <div id="container3D"></div>
+
+  <script type="module">
+   import * as THREE from 'https://cdn.skypack.dev/three@0.129.0/build/three.module.js';
+import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js';
+import { gsap } from 'https://cdn.skypack.dev/gsap';
+
+const camera = new THREE.PerspectiveCamera(
+    10,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
+);
+camera.position.z = 13;
+
+const scene = new THREE.Scene();
+let bee;
+let mixer;
+const loader = new GLTFLoader();
+// Make sure bee is loaded before adding visibility toggle
+loader.load('Flying bee.glb', function (gltf) {
+    bee = gltf.scene;
+
+    // 🐝 Make the bee SMALL
+    bee.scale.set(0.02 , 0.02, 0.02); // 0.01 = super small, try 0.03 if too tiny
+
+    scene.add(bee);
+
+    mixer = new THREE.AnimationMixer(bee);
+    mixer.clipAction(gltf.animations[0]).play();
+
+    modelMove();  // Start bee movement
+
+    // Show/hide logic
+    const sidebarToggle = document.querySelector('.menu-button');
+    const sidebarClose = document.querySelector('.sidebar li:first-child');
+
+    sidebarToggle.addEventListener('click', showSidebar);
+    sidebarClose.addEventListener('click', hideSidebar);
+});
+
+
+const renderer = new THREE.WebGLRenderer({alpha: true});
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.getElementById('container3D').appendChild(renderer.domElement);
+
+// light
+const ambientLight = new THREE.AmbientLight(0xffffff, 1.3);
+scene.add(ambientLight);
+
+const topLight = new THREE.DirectionalLight(0xffffff, 1);
+topLight.position.set(500, 500, 500);
+scene.add(topLight);
+
+
+const reRender3D = () => {
+    requestAnimationFrame(reRender3D);
+    renderer.render(scene, camera);
+    if(mixer) mixer.update(0.02);
+};
+reRender3D();
+
+// Original positions and rotations
+let arrPositionModel = [
+    {
+        id: 'banner',
+        position: { x: 0.1, y: -0.5, z: 3 },
+        rotation: { x: 0.5, y: -3.17, z: 0 }
+    },
+    {
+        id: "intro",
+        position: { x: -1, y: -0.5, z: 3 },
+        rotation: { x: 0.2, y: -4, z: 0 },
+    },
+    {
+        id: "description",
+        position: { x: 1, y: -0.5, z: 3 },
+        rotation: { x: 0.2, y: -2, z: 0 },
+    },
+    {
+        id: "contact",
+        position: { x: -1, y: -0.5, z: 0 },
+        rotation: { x: 0.3, y: 0, z: 0 },
+    },
+    {
+        id: "brand",
+        position: { x: 1, y: 0, z: 0 },
+        rotation: { x: 0.3, y: 0, z: 0 },
+    }
+];
+
+// Function to adjust positions based on screen size
+function adjustForScreenSize() {
+    const isMobile = window.matchMedia("(max-width: 780px)").matches;
+
+    if (isMobile) {
+        arrPositionModel = arrPositionModel.map(model => {
+            // Adjust positions and rotations for mobile
+            return {
+                id: model.id,
+                position: {
+                    x: model.position.x * 0.4,  // Scale down positions for mobile
+                    y: model.position.y * 0.4,
+                    z: model.position.z * 0.2
+                },
+                rotation: {
+                    x: model.rotation.x * 1,  // Scale down rotations if needed
+                    y: model.rotation.y * 1,
+                    z: model.rotation.z * 1
+                }
+            };
+        });
+    }
+}
+
+// Call the function to adjust positions on load
+adjustForScreenSize();
+
+// Optionally, listen for window resize events
+window.addEventListener('resize', adjustForScreenSize);
+
+const modelMove = () => {
+    const sections = document.querySelectorAll('.section');
+    let currentSection;
+    sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 3) {
+            currentSection = section.id;
+        }
+    });
+    let position_active = arrPositionModel.findIndex(
+        (val) => val.id == currentSection
+    );
+    if (position_active >= 0) {
+        let new_coordinates = arrPositionModel[position_active];
+        gsap.to(bee.position, {
+            x: new_coordinates.position.x,
+            y: new_coordinates.position.y,
+            z: new_coordinates.position.z,
+            duration: 4,
+            ease: "power1.out"
+        });
+        gsap.to(bee.rotation, {
+            x: new_coordinates.rotation.x,
+            y: new_coordinates.rotation.y,
+            z: new_coordinates.rotation.z,
+            duration: 4,
+            ease: "power1.out"
+        })
+    }
+}
+window.addEventListener('scroll', () => {
+    if (bee) {
+        modelMove();
+    }
+})
+window.addEventListener('resize', () => {
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+}) 
+function showSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.add('open');
+    // Hide the bee when sidebar is open
+    if (bee) {
+        bee.visible = false;  // Hide the bee
+    }
+}
+
+function hideSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.remove('open');
+    // Show the bee when sidebar is closed
+    if (bee) {
+        bee.visible = true;  // Show the bee
+    }
+}
+
+  </script>
+</body>
+</html>
